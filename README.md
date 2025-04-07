@@ -21,5 +21,8 @@ Para gerar testes mais aleatórios e verificar funcionamento, elaborei um script
 
 ```
 chmod +x gen_v.sh
+./gen_v.sh -p
 ./gen_v.sh
 ```
+
+novamente -p indica se quer imprimir os valores parciais das threads.
