@@ -10,7 +10,6 @@ RESET='\033[0m'
 
 MOSTRAR_THREADS=0
 
-# Checa se foi passado -p
 if [ "$1" == "-p" ]; then
     MOSTRAR_THREADS=1
 fi
@@ -18,13 +17,10 @@ fi
 for i in $(seq 1 10); do
     ARQ="rand_${i}.bin"
 
-    # Gera dimensão aleatória entre 500 e 5000
     DIM=$((500 + RANDOM % 4501))
 
-    # Gera arquivo binário com ./sequencial
-    ./sequencial "$DIM" "$ARQ"
+    ./gen "$DIM" "$ARQ"
 
-    # Define nthreads de forma balanceada
     NTHREADS=$((DIM / 20))
 
     echo -e "${CYAN}Rodando ./prod_thread com ${YELLOW}$NTHREADS threads${CYAN} no arquivo ${BLUE}$ARQ${CYAN} (dim = ${GREEN}$DIM${CYAN})...${RESET}"
