@@ -1,8 +1,9 @@
 # Exercício 1:
 
-Modo de uso: gcc -o prod_thread prod_thread.c
+Modo de uso: 
 
 ```
+gcc -o prod_thread prod_thread.c
 ./prod_thread -p <nthreads> <arquivo.bin>
 ```
 
