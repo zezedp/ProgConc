@@ -26,3 +26,5 @@ chmod +x gen_v.sh
 ```
 
 novamente -p indica se quer imprimir os valores parciais das threads.
+
+Observe que o script executa ambos os programas C e escreve rand_{i}.bin para $1 \leq i \leq 10$ arquivos binários requisitados no enunciado do exercício, contendo dimensão dos vetores, vetor 1, vetor 2 e produto interno sequencial, respectivamente.
