@@ -44,16 +44,16 @@ int main(int argc, char* argv[]) {
 		    exibir_threads = 1;
 		    break;
 		default:
-		    fprintf(stderr,"Uso: %s [-p] <nthreads> <arquivo.bin>\n");
+		    fprintf(stderr,"Uso: %s [-p] <nthreads> <arquivo.bin>\n", argv[0]);
 		    exit(EXIT_FAILURE);
 	}
     }
 
     // Verifica se inseriu os argumentos necessários
     if (argc - optind != 2) {
-    	fprintf(stderr, "Uso: %s [-p] <nthreads> <arquivo.bin>\n");
-	exit(EXIT_FAILURE);
-    }    
+        fprintf(stderr, "Uso: %s [-p] <nthreads> <arquivo.bin>\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
     
     // Declara variáveis
     double produto_sequencial, e;
