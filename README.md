@@ -1,4 +1,7 @@
 # Exercício 1:
+## Guilherme Cappelli Bouzon de Amorim Cruz
+## DRE: 121170269
+## OBS: RELATÓRIO COMPLETO NO PDF DENTRO DESSE REPOSITÓRIO
 
 Modo de uso: 
 
