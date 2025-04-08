@@ -17,6 +17,7 @@ onde a flag -p indica se será printado os resultados parciais de cada thread.
 gcc -o gen gen.c
 ./gen <dim> <arquivo_a_ser_criado.bin>
 ```
+Os arquivos gerados para teste se encontram na pasta binarios_testes.
 
 ## 3. Automatizando testes:
 
