@@ -52,6 +52,7 @@ int main(int argc, char* argv[]) {
     // Verifica se inseriu os argumentos necessários
     if (argc - optind != 2) {
     	fprintf(stderr, "Uso: %s [-p] <nthreads> <arquivo.bin>\n");
+	exit(EXIT_FAILURE);
     }    
     
     // Declara variáveis
