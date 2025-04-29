@@ -60,7 +60,7 @@ Para cada configuração, o programa foi rodado 10 vezes e o tempo de execução
 É dada pela razão entre o tempo de execução do programa sequencial - que nesse caso será fornecido pela execução de 1 thread - e o tempo de execução com múltiplas threads.
 
 $$
-A = \frac{T_{seq}}{T_{n\_{threads}}
+A = \frac{T_{seq}}{T_{n\_{threads}}}
 $$
 
 * Eficiência: Mede o quanto cada thread adicional contribui para a aceleração do programa. Essencialmente, a métrica busca explicitar se o uso de múltiplas threads está trazendo resultados proporcionais, isto é, contribuindo para o desempenho.
