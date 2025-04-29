@@ -75,6 +75,11 @@ Para isso, calculamos para cada configuração $(N, n\_threads)$ suas respectiva
 
 ![plot1](./graficos/tempo_execucao_por_threads.png)
 
+Nesse gráfico, observamos que para valores pequenos de N, a redução do tempo de execução é minúscula. Mesmo para N=10^5, a melhoria do tempo de execução ao comparar a versão sequencial com o uso de 2 threads é razoável, mas, para outros valores de N menores que 10^5, o tempo de execução permanece praticamente constante, independentemente do número de threads utilizadas. 
+Já para N = 10^6, percebe-se uma redução significativa no tempo de execução ao passar do sequencial para 2 threads, seguida de uma nova diminuição ao passarmos para 4 threads. No entanto, a melhoria ao aumentar para 8 threads não é tanta quanto as anteriores, apesar de diminuir o tempo de execução.
+
+Isso nos diz que para valores de N maiores, a concorrência começa a mostrar seus benefícios, visto que com o aumento de N, o programa sequencial se torna mais custoso, permitindo que a adoção de múltiplas threads ajude numa redução maior do tempo total de execução, superando assim o overhead de inicialização e sincronização de threads.
+
 ### 3.2. Aceleração:
 
 ![plot2](./graficos/aceleração_por_threads.png)
