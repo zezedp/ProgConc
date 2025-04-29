@@ -71,9 +71,13 @@ $$
 
 Para isso, calculamos para cada configuração $(N, n\_threads)$ suas respectivas acelerações e eficiências.
 
-### 3.1. Aceleração:
+### 3.1. Tempo de Execução:
 
-![plot](./graficos/aceleração_por_threads.png)
+![plot1](./graficos/tempo_execucao_por_threads.png)
+
+### 3.2. Aceleração:
+
+![plot2](./graficos/aceleração_por_threads.png)
 
 Percebe-se que para valores pequenos de N, como 1000 e 10000, a utilização de múltiplas threads não nos ajudou, porque resultou em uma piora no desempenho. Conforme o número de threads aumenta, para esses valores de N, a aceleração diminui, porque o tempo gasto na criação e sincronização das threads é significativo comparado com o tempo de processamento verdadeiro, ou seja, esse overhead impede um ganho de performance nessa execução paralela.
 
@@ -81,12 +85,12 @@ Para valores maiores de N, como 10^5 e 10^6, observamos uma mudança no comporta
 
 Vale destacar, que a aceleração quando N=10^5 começa a cair para 4 threads, enquanto para N=10^6, a aceleração atinge seu valor máximo de 1.78 em 4 threads, apenas decrescendo para 8 threads.
 
-### 3.2. Eficiência:
+### 3.3. Eficiência:
 
-![plot](./graficos/eficiência_por_threads.png)
+![plot3](./graficos/eficiência_por_threads.png)
 
 
-Para valores pquenos de N, a eficiência cai rapidamente à medida que aumentamos o número de threads, que pode ser um indicador de que o custo desse manejo de threads é maior que os ganhos da divisão de carga de trabalho entre as threads. Isso se deve ao fato de que o tempo de execução já é pequeno sequencialmente e o overhead da concorrência supera ele.
+Para valores pequenos de N, a eficiência cai rapidamente à medida que aumentamos o número de threads, que pode ser um indicador de que o custo desse manejo de threads é maior que os ganhos da divisão de carga de trabalho entre as threads. Isso se deve ao fato de que o tempo de execução já é pequeno sequencialmente e o overhead da concorrência supera ele.
 
 Conforme aumentamos os valores de N nos testes, a eficiência se torna melhor comparado com valores de N's pequenos, porque para N=10^6, por exemplo, pelo tempo de processamento ser maior que os outros, o uso de múltiplas threads compensa o overhead da concorrência ao dividir a carga de trabalho entre as threads. Entretanto, ainda assim, a eficiência cai conforme aumentamos o número de threads. 
 
