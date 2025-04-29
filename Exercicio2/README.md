@@ -1,3 +1,7 @@
+# Relatório do Exercício 2:
+
+# OBS: A análise de resultados se encontra neste README.md
+
 ## 1. Modo de Uso:
 
 ```
