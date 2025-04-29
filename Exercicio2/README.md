@@ -81,3 +81,9 @@ Vale destacar, que a aceleração quando N=10^5 começa a cair para 4 threads, e
 
 ### 3.2. Eficiência:
 
+Para valores pquenos de N, a eficiência cai rapidamente à medida que aumentamos o número de threads, que pode ser um indicador de que o custo desse manejo de threads é maior que os ganhos da divisão de carga de trabalho entre as threads. Isso se deve ao fato de que o tempo de execução já é pequeno sequencialmente e o overhead da concorrência supera ele.
+
+Conforme aumentamos os valores de N nos testes, a eficiência se torna melhor comparado com valores de N's pequenos, porque para N=10^6, por exemplo, pelo tempo de processamento ser maior que os outros, o uso de múltiplas threads compensa o overhead da concorrência ao dividir a carga de trabalho entre as threads. Entretanto, ainda assim, a eficiência cai conforme aumentamos o número de threads. 
+
+Assim, percebemos que o uso de threads causa uma melhora na performance quando N for grande o suficiente, além de que o uso excessivo de threads em problemas com N pequeno acarreta em desperdício de recursos.
+
