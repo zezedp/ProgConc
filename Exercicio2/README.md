@@ -86,9 +86,7 @@ Isso nos diz que para valores de N maiores, a concorrência começa a mostrar se
 
 Percebe-se que para valores pequenos de N, como 1000 e 10000, a utilização de múltiplas threads não nos ajudou, porque resultou em uma piora no desempenho. Conforme o número de threads aumenta, para esses valores de N, a aceleração diminui, porque o tempo gasto na criação e sincronização das threads é significativo comparado com o tempo de processamento verdadeiro, ou seja, esse overhead impede um ganho de performance nessa execução paralela.
 
-Para valores maiores de N, como 10^5 e 10^6, observamos uma mudança no comportamento da gráfico, porque para 10^6 há um aumento significativo na aceleração ao usarmos duas threads, e ainda mais quando adotamos quatro threads. Entretanto, em um cenário ideal, a aceleração deveria se aproximar do número de threads, que não ocorre quando aumentamos para 8 threads, visto que o ganho de velocidade é inferior à ele. Nesse caso, alguns dos fatores que podem estar limitando essa performance além do overhead de inicialização das threads e o mutex, é que recursos como memória e cache são compartilhados, e portanto outros processos competem pelo seu uso.
-
-Vale destacar, que a aceleração quando N=10^5 começa a cair para 4 threads, enquanto para N=10^6, a aceleração atinge seu valor máximo de 1.78 em 4 threads, apenas decrescendo para 8 threads.
+Para valores maiores de N, como 10^5 e 10^6, observamos uma mudança no comportamento da gráfico, porque para 10^6 há um aumento significativo na aceleração ao usarmos duas threads, e ainda mais quando adotamos quatro ou oito threads. Entretanto, em um cenário ideal, a aceleração deveria se aproximar do número de threads, que não ocorre quando analisamos o aumento de threads para valores de N abaixo de 10^5 (incluso), visto que o ganho de velocidade é inferior à ele. Nesse caso, alguns dos fatores que podem estar limitando essa performance além do overhead de inicialização das threads e o mutex, é que recursos como memória e cache são compartilhados, e portanto outros processos competem pelo seu uso.
 
 ### 3.3. Eficiência:
 
