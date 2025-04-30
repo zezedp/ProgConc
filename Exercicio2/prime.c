@@ -67,18 +67,26 @@ int main(int argc, char* argv[]){
 	N = atoll(argv[2]);
 	
 	tid = (pthread_t*) malloc(sizeof(pthread_t) * nthreads);
+	if (tid == NULL){
+		printf("ERRO: malloc() do tid");
+		exit(-2);
+	}
 	pthread_mutex_init(&mutex, NULL);
 	struct timespec start, end;
 	clock_gettime(CLOCK_MONOTONIC, &start);
 
 	/* Cria threads */
 	for (long int i = 0; i < nthreads; ++i){
-		pthread_create(&tid[i], NULL, prime_sequence, NULL); 
+		if (pthread_create(&tid[i], NULL, prime_sequence, NULL)){
+			perror("ERRO: Pthread Create");
+		} 
 	}
 	
 	/* Espera Threads */
 	for (long int i = 0; i < nthreads; ++i){
-		pthread_join(tid[i], NULL);
+		if (pthread_join(tid[i], NULL)){
+			perror("ERRO: Pthread Join");
+		}
 	}
 	clock_gettime(CLOCK_MONOTONIC, &end);
 
