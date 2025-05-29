@@ -57,7 +57,7 @@ Thread vencedora: Consumidor 1 que encontrou 14 primos
 
 Ainda assim, vemos uma dominância das threads que iniciam primeiro, apesar de ser perceptível uma certa mudança na quantidade de primos encontrados pela thread vencedora.
 
-## 3.3. Para $N=10000$:
+### 3.3. Para $N=10000$:
 
 Sejam $M=25$ e $C=15$
 
