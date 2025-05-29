@@ -28,6 +28,36 @@ Após o término de todas as threads, o programa calcula o total de primos encon
 
 ## 3. Testes:
 
+OBS: Os ids de threads consumidoras começam no $1$.
+* Para $N = 10$:
+
+Sejam $M=4$ e $C=4$:
+```
+Numero de primos encontrados: 4
+Thread vencedora: Consumidor 1 que encontrou 3 primos
+```
+Sejam $M=4$ e $C=12$:
+```
+Numero de primos encontrados: 4
+Thread vencedora: Consumidor 1 que encontrou 3 primos
+```
+
+Rodando casos pequenos, não é perceptível uma mudança na thread vencedora. Isso ocorre provavelmente pela pouca quantidade de itens no buffer, que faz com que as primeiras threads iniciadas consumam rapidamente os elementos disponíveis antes que as outras consigam competir.
+
+* Para $N = 100$
+* Resultados com flag ```[--print]```: 
+
+```
+Thread Consumidora 1 encontrou o primo 2
+Thread Consumidora 1 encontrou o primo 5
+Thread Consumidora 1 encontrou o primo 7
+Thread Consumidora 1 terminou. Encontrou 3 numeros primos.
+Thread Consumidora 2 encontrou o primo 3
+Thread Consumidora 2 terminou. Encontrou 1 numeros primos.
+
 Numero de primos encontrados: 4
 Thread vencedora: Consumidor 1 que encontrou 3 primos
 
+Numero de primos encontrados: 4
+Thread vencedora: Consumidor 1 que encontrou 3 primos
+```
