@@ -1,6 +1,4 @@
-# Relatório do Exercício 2:
-
-# OBS: A análise de resultados se encontra neste README.md
+# Relatório do Exercício 3:
 
 ## 1. Modo de Uso:
 
