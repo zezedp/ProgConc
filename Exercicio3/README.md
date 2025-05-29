@@ -82,7 +82,8 @@ Com uma sequência maior e mais threads concorrendo, observa-se uma variação n
 
 * Resultado com flag ```[--print]```: 
 
-Para entender melhor o comportamento das threads, foi utilizada a flag `--print` durante a execução com os parâmetros \(N = 10000\), \(M = 25\) e \(C = 15\). Mesmo com uma thread vencedora, nota-se que os demais consumidores possuem desempenhos bastante próximos, refletindo uma boa distribuição da carga de trabalho, especialmente em cenários de maior concorrência e volume de dados. Segue abaixo um trecho da saída do programa:
+Pra entender melhor como as threads se comportam, foi utilizada a flag `--print` durante a execução com os parâmetros $$N = 10000$$, $$M = 25$$ e $$C = 15$$. Mesmo tendo uma thread vencedora, dá pra perceber que as outras não ficam muito atrás, mostrando que o trabalho acabou ficando bem distribuído entre os consumidores, especialmente quando tem mais concorrência e mais números pra processar. Segue abaixo um trecho da saída do programa:
+
 ```
 ...
 Thread Consumidora 15 encontrou o primo 9857
