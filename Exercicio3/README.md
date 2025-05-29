@@ -29,12 +29,12 @@ Após o término de todas as threads, o programa calcula o total de primos encon
 OBS: Os ids de threads consumidoras começam no $1$.
 ### 3.1. Para $N = 10$:
 
-Sejam $M=4$ e $C=4$:
+Sejam $M=4$ e $C=4$
 ```
 Numero de primos encontrados: 4
 Thread vencedora: Consumidor 1 que encontrou 3 primos
 ```
-Sejam $M=4$ e $C=12$:
+Sejam $M=4$ e $C=12$
 ```
 Numero de primos encontrados: 4
 Thread vencedora: Consumidor 1 que encontrou 3 primos
@@ -44,7 +44,7 @@ Em casos pequenos como este, observa-se que a thread que inicia primeiro tende a
 
 ### 3.2. Para $N = 100$:
 
-Sejam $M=10$ e $C=4$:
+Sejam $M=10$ e $C=4$
 ```
 Numero de primos encontrados: 25
 Thread vencedora: Consumidor 1 que encontrou 22 primos
