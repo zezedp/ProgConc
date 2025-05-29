@@ -29,7 +29,7 @@ Após o término de todas as threads, o programa calcula o total de primos encon
 ## 3. Testes:
 
 OBS: Os ids de threads consumidoras começam no $1$.
-* Para $N = 10$:
+### 3.1. Para $N = 10$:
 
 Sejam $M=4$ e $C=4$:
 ```
@@ -42,22 +42,80 @@ Numero de primos encontrados: 4
 Thread vencedora: Consumidor 1 que encontrou 3 primos
 ```
 
-Rodando casos pequenos, não é perceptível uma mudança na thread vencedora. Isso ocorre provavelmente pela pouca quantidade de itens no buffer, que faz com que as primeiras threads iniciadas consumam rapidamente os elementos disponíveis antes que as outras consigam competir.
+Em casos pequenos como este, observa-se que a thread que inicia primeiro tende a consumir praticamente todos os itens do buffer antes que as demais consigam competir. Isso ocorre devido à baixa quantidade de itens e à velocidade com que os primeiros consumidores atuam.
 
-* Para $N = 100$
-* Resultados com flag ```[--print]```: 
+### 3.2. Para $N = 100$:
+
+Sejam $M=10$ e $C=4$:
+```
+Numero de primos encontrados: 25
+Thread vencedora: Consumidor 1 que encontrou 22 primos
+```
 
 ```
-Thread Consumidora 1 encontrou o primo 2
-Thread Consumidora 1 encontrou o primo 5
-Thread Consumidora 1 encontrou o primo 7
-Thread Consumidora 1 terminou. Encontrou 3 numeros primos.
-Thread Consumidora 2 encontrou o primo 3
-Thread Consumidora 2 terminou. Encontrou 1 numeros primos.
+Numero de primos encontrados: 25
+Thread vencedora: Consumidor 1 que encontrou 14 primos
+```
 
-Numero de primos encontrados: 4
-Thread vencedora: Consumidor 1 que encontrou 3 primos
+Ainda assim, vemos uma dominância das threads que iniciam primeiro, apesar de ser perceptível uma certa mudança na quantidade de primos encontrados pela thread vencedora.
 
-Numero de primos encontrados: 4
-Thread vencedora: Consumidor 1 que encontrou 3 primos
+## 3.3. Para $N=10000$:
+
+Sejam $M=25$ e $C=15$
+
+```
+Numero de primos encontrados: 1229
+Thread vencedora: Consumidor 8 que encontrou 102 primos
+```
+
+```
+Numero de primos encontrados: 1229
+Thread vencedora: Consumidor 9 que encontrou 98 primos
+```
+
+```
+Numero de primos encontrados: 1229
+Thread vencedora: Consumidor 3 que encontrou 117 primos
+```
+
+Com uma sequência maior e mais threads concorrendo, observa-se uma variação natural nas threads vencedoras, além de uma distribuição mais equilibrada na quantidade de primos encontrados.
+
+* Resultado com flag ```[--print]```: 
+
+Para entender melhor o comportamento das threads, foi utilizada a flag `--print` durante a execução com os parâmetros \(N = 10000\), \(M = 25\) e \(C = 15\). Mesmo com uma thread vencedora, nota-se que os demais consumidores possuem desempenhos bastante próximos, refletindo uma boa distribuição da carga de trabalho, especialmente em cenários de maior concorrência e volume de dados. Segue abaixo um trecho da saída do programa:
+```
+...
+Thread Consumidora 15 encontrou o primo 9857
+Thread Consumidora 13 encontrou o primo 9859
+Thread Consumidora 9 encontrou o primo 9883
+Thread Consumidora 1 encontrou o primo 9901
+Thread Consumidora 8 encontrou o primo 9907
+Thread Consumidora 10 encontrou o primo 9887
+Thread Consumidora 12 encontrou o primo 9871
+Thread Consumidora 12 encontrou o primo 9929
+Thread Consumidora 10 encontrou o primo 9931
+Thread Consumidora 9 encontrou o primo 9941
+Thread Consumidora 3 encontrou o primo 9923
+Thread Consumidora 14 encontrou o primo 9949
+Thread Consumidora 4 encontrou o primo 9967
+Thread Consumidora 6 encontrou o primo 9973
+Thread Consumidora 7 terminou. Encontrou 84 numeros primos.
+Thread Consumidora 15 terminou. Encontrou 74 numeros primos.
+Thread Consumidora 8 terminou. Encontrou 90 numeros primos.
+Thread Consumidora 2 terminou. Encontrou 78 numeros primos.
+Thread Consumidora 10 terminou. Encontrou 74 numeros primos.
+Thread Consumidora 9 terminou. Encontrou 79 numeros primos.
+Thread Consumidora 11 terminou. Encontrou 88 numeros primos.
+Thread Consumidora 13 terminou. Encontrou 85 numeros primos.
+Thread Consumidora 12 terminou. Encontrou 100 numeros primos.
+Thread Consumidora 1 terminou. Encontrou 79 numeros primos.
+Thread Consumidora 6 terminou. Encontrou 81 numeros primos.
+Thread Consumidora 4 terminou. Encontrou 83 numeros primos.
+Thread Consumidora 5 terminou. Encontrou 69 numeros primos.
+Thread Consumidora 14 terminou. Encontrou 88 numeros primos.
+Thread Consumidora 3 terminou. Encontrou 77 numeros primos.
+
+
+Numero de primos encontrados: 1229
+Thread vencedora: Consumidor 12 que encontrou 100 primos
 ```
