@@ -9,7 +9,7 @@ A primeira tarefa já implementada no código fornecido imprime uma mensagem no 
 
 Já o metodo ```shutdown()``` assegura que as threads sejam encerradas de forma ordenada, evitando assim que as threads fiquem em espera indefinidamente.
 
-#### Saída no conjunto $\{0, \dots, 24\}$:
+#### Saída no conjunto {$0, \dots, 24$}:
 
 ```
 Hello da tarefa 0
