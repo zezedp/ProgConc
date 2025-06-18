@@ -7,9 +7,9 @@ A classe ```FilaTarefas``` cria as n threads que ficam em aguardo (wait()) até 
 
 A primeira tarefa já implementada no código fornecido imprime uma mensagem no console ```Hello da tarefa {i}``` e a partir desse valor $i$ do laço 'for' a segunda tarefa verifica se esse número é primo. Nesse contexto, múltiplas tarefas são processadas paralelamente pelas threads que estão disponíveis, que possui um desempenho melhor que uma versão sequencial desse programa.
 
-Já o metodo ```shutdown()`` assegura que as threads sejam encerradas de forma ordenada, evitando assim que as threads fiquem em espera indefinidamente.
+Já o metodo ```shutdown()``` assegura que as threads sejam encerradas de forma ordenada, evitando assim que as threads fiquem em espera indefinidamente.
 
-#### Saída no conjunto ${0, \dots, 24}$:
+#### Saída no conjunto $\{0, \dots, 24\}$:
 
 ```
 Hello da tarefa 0
