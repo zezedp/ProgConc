@@ -63,7 +63,7 @@ public class FutureBlocos  {
 	Future<Integer> submit = executor.submit(worker);
 	list.add(submit);
     }
-
+    System.out.println("N = " + N);
     System.out.println("Tamanho da list = " + list.size());
 
     long sum = 0;
