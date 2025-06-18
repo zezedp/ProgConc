@@ -9,6 +9,7 @@ Nesse sentido, a thread principal pode continuar trabalhando enquanto as tarefas
 
 Vale ressaltar, que a divisão em chunks reduz o overhead de criação de tarefas e melhora a performance, pois cada thread executa mais trabalho por tarefa.
 
+#### Saída:
 ```
 N = 1000
 Tamanho da list = 10
