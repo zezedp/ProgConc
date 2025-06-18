@@ -8,3 +8,9 @@ A classe ```PrimoCheckerBlocos```implementa a interface ```Callable<Integer>```e
 Nesse sentido, a thread principal pode continuar trabalhando enquanto as tarefas são processadas em paralelo. No final, a função ```get()``` de cada ```Future``` é chamada para recuperar o valor retornado por cada bloco e a soma desses valores nos informa o total de primos no conjunto de $1-N$.
 
 Vale ressaltar, que a divisão em chunks reduz o overhead de criação de tarefas e melhora a performance, pois cada thread executa mais trabalho por tarefa.
+
+```
+N = 1000
+Tamanho da list = 10
+Quantidade de primos entre 1-N: 359
+```
